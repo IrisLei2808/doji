@@ -1,0 +1,23 @@
+$categoryPixel: 320px;
+$heightPixel: 25px;
+$borderPixel: 50%;
+$displayPixel: inline-block;
+$marginPixel: 12px;
+.main-category {
+    background-color: white;
+}
+.sort {
+    margin-right: $heightPixel;
+}
+.img-category-jewelry {
+    width: $categoryPixel;
+    height: $categoryPixel;
+    background-color: white;
+    margin-left: 35px;
+    margin-top: 50px;
+}
+.img-category-chocolate {
+    width: $categoryPixel;
+    height: $categoryPixel;
+    margin-top: 23px;
+}

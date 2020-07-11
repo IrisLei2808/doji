@@ -1,0 +1,27 @@
+.toolbar {
+   background-color: white;
+   position: fixed;
+ }
+ 
+ .image-logo {
+   padding-left: 580px;
+   cursor: pointer;
+ }
+ 
+ .img-bag, .img-search, .img-heart {
+   margin-left: 100px;
+   cursor: pointer;
+ }
+ 
+ .img-user {
+   cursor: pointer;
+   padding-left: 100px;
+ }
+ 
+ i {
+   font-size: 25px;
+   color: black;
+   padding-top: 0px;
+   padding-left: 110px;
+   cursor: pointer;
+ }

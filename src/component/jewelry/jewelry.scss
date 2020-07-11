@@ -1,0 +1,20 @@
+$categoryPixel: 320px;
+$heightPixel: 25px;
+$borderPixel: 50%;
+$displayPixel: inline-block;
+$marginPixel: 12px;
+.main-category {
+    background-color: white;
+}
+.sort {
+    margin-right: $heightPixel;
+}
+.img-category {
+    width: $categoryPixel;
+    height: $categoryPixel;
+}
+.img-category-chocolate {
+    width: $categoryPixel;
+    height: $categoryPixel;
+    margin-top: 23px;
+}

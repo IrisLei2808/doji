@@ -1,0 +1,39 @@
+.img-slide-style {
+    margin-top: 20px;
+    height: 600px;
+    background-size: cover;
+    width: 100%;
+    opacity: 1;
+    left: 0px;
+    transform: translate(0px, 0px);
+    visibility: inherit;
+    z-index: 20;
+    float: right;
+  }
+  
+  .title-item-style {
+    padding-top: 50px;
+    padding-left: 500px;
+    letter-spacing: 10px;
+    font-weight: 300;
+    font-size: 50px;
+    border-color: rgb(255, 255, 255);
+    border-style: none;
+    color: white;
+    width: 100%;
+    animation-duration: 3s;
+    animation-name: slidein;
+    position: relative;
+  }
+  
+  .title-brand-style {
+    border-color: rgb(255, 255, 255);
+    border-style: none;
+    color: white;
+    animation-duration: 3s;
+    animation-name: slidein;
+    padding-top: 200px;
+    padding-left: 140px;
+    font-weight: 300;
+    font-size: 20px;
+  }

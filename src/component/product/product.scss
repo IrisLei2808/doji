@@ -1,0 +1,82 @@
+.product {
+  padding-top: 100px;
+}
+
+.vertical-left {
+  border-bottom: 1px thick black;
+  margin-left: 620px;
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.vertical-right {
+  border-bottom: 1px thick black;
+  margin-left: 620px;
+  width: 200px;
+  margin-top: 20px;
+}
+
+.title {
+  font-weight: lighter;
+}
+
+.title-product {
+  padding-top: 50px;
+}
+
+.tile {
+  width: 200px;
+  padding-right: 75px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.price {
+  display: inline-block;
+  padding-left: 30px;
+}
+
+.container {
+  width: 290px;
+  padding-top: 10px;
+}
+
+@-webkit-keyframes img-product {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+@keyframes img-product {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+.img-product {
+  width: 300px;
+  height: 300px;
+  background-position: 50% 50%;
+  background-size: cover;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+
+  &:hover, &:focus, &:active {
+    -webkit-animation-name: insta-img;
+    animation-name: insta-img;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+  }
+}

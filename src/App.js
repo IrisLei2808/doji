@@ -1,25 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
+import './App.css';
+import Content from './redux/content';
+import Blog from './component/blog/blog';
+import Category from './component/category/category';
+import {Switch ,Route } from 'react-router-dom';
+import About from './component/about/about';
+import Contact from './component/contact/contact';
+import Login from './component/login/login';
+import Detail from './component/detail/detail';
+import Jewelry from './component/jewelry/jewelry';
+import Shoe from './component/shoe/shoe';
+import Shirt from './component/shirt/shirt';
 import './App.css';
 
 function App() {
   return (
+    <Switch>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+         <Route exact path="/" component={Content} />
+         <Route path="/blog" component={Blog} />
+         <Route path="/shop" component={Category} />
+         <Route path="/jewelry" component={Jewelry} />
+         <Route path="/shoe" component={Shoe} />
+         <Route path="/shirt" component={Shirt} />
+         <Route path="/about" component={About} />
+         <Route path="/contact" component={Contact} />
+         <Route path="/login" component={Login} />
+         <Route path="/detail" component={Detail} />
     </div>
+    </Switch>
   );
 }
 

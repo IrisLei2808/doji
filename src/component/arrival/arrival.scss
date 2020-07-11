@@ -1,0 +1,28 @@
+$widthPixel: 700px;
+$lighterPixel: lighter;
+.img-zara {
+    width: $widthPixel;
+    cursor: pointer;
+  }
+  
+  .img-arrival {
+    width: $widthPixel;
+    height: 1050px;
+    cursor: pointer;
+  }
+  
+  .img-item {
+    height: 110px;
+    margin-right: 250px;
+  }
+  
+  .title-zara {
+    float: left;
+    font-weight: $lighterPixel;
+  }
+  
+  .price-zara {
+    padding-top: 30px;
+    padding-right: $widthPixel;
+    font-weight: $lighterPixel;
+  }

@@ -1,0 +1,51 @@
+.column-footer {
+    margin-top: 100px;
+}
+
+.column-footer > h3  {
+    color: white;
+    font-weight: lighter;
+ 
+}
+.column-footer > p {
+    color: white;
+    font-weight: lighter;
+    text-transform: lowercase;
+}
+input {
+width: 50%;
+line-height: 1;
+border: 2px solid;
+padding: 1em 8.41575em 1em 1.41575em;
+border-radius: 5px;
+}
+.bt01 {
+    border: 2px solid;
+    border-radius: 3px;
+    background: none;
+    background-color: #ef3636;
+    border-color: #ef3636;
+    color: #fff;
+    cursor: pointer;
+    padding: .6180469716em 1.41575em;
+    text-decoration: none;
+    font-weight: 700;
+    text-shadow: none;
+    display: inline-block;
+    -webkit-appearance: none;
+    margin-left: 20px;
+}
+.hr01 {
+    color: 1px lighter white;
+}
+.copy-right {
+    color: white;
+    font-weight: lighter;
+    width: 500px;
+    margin-top: 180px;
+}
+.img-payment {
+    float: left;
+    margin-left: 40px;
+    margin-top: 20px;
+}

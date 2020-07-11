@@ -1,0 +1,39 @@
+.black-bar {
+  background: black;
+  height: 50px;
+  width: 100%;
+
+  h4 {
+    color: #BCBBBB;
+    font-size: 0.8rem;
+    letter-spacing: 0.01rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: lighter;
+    padding-top: 11px;
+    display: inline-block;
+    padding-left: 200px;
+
+    &:hover {
+      color: #789EF3;
+    }
+  }
+}
+
+#help {
+  padding-left: 550px;
+  cursor: pointer;
+}
+
+#ship {
+  padding-left: 90px;
+}
+
+#account, #en {
+  padding-left: 40px;
+  cursor: pointer;
+}
+
+#usd {
+  padding-left: 60px;
+  cursor: pointer;
+}

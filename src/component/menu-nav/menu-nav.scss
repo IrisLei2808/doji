@@ -1,0 +1,281 @@
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  &:before, &:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+body {
+  background: #bdc3c7;
+  line-height: 1.5;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#header {
+  background: white;
+  width: 100%;
+  margin-top: 50px;
+  padding-right: 400px;
+
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}
+
+.search {
+  float: right;
+  padding: 30px;
+}
+
+input {
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.logo {
+  float: left;
+  padding: 26px 0 26px;
+
+  a {
+    font-size: 28px;
+    display: block;
+    padding: 0 0 0 20px;
+  }
+}
+
+nav {
+  float: right;
+
+  > ul {
+    float: left;
+    position: relative;
+  }
+
+  li {
+    list-style: none;
+    float: left;
+  }
+
+  .dropdown {
+    position: relative;
+  }
+
+  li {
+    a {
+      float: left;
+      padding: 35px;
+      color: black;
+
+      &:hover {
+        background: wheat;
+      }
+    }
+
+    ul {
+      display: none;
+    }
+
+    &:hover ul {
+      display: inline;
+    }
+
+    li {
+      float: none;
+    }
+  }
+
+  .dropdown {
+    ul {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      background: white;
+      padding: 20px 0;
+      border-bottom: 3px solid #34495e;
+      z-index: 999;
+    }
+
+    li {
+      white-space: nowrap;
+      z-index: 999;
+
+      a {
+        padding: 10px 35px;
+        font-size: 13px;
+        min-width: 200px;
+        z-index: 999;
+      }
+    }
+  }
+
+  .mega-dropdown {
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    overflow: visible;
+    padding: 20px 35px;
+    border-bottom: 3px solid #34495e;
+    z-index: 999;
+  }
+
+  li li a {
+    float: none;
+    color: #333;
+    display: block;
+    padding: 8px 10px;
+    border-radius: 3px;
+    font-size: 13px;
+    z-index: 999;
+
+    &:hover {
+      background: #bdc3c7;
+      background: #FAFBFB;
+      z-index: 999;
+    }
+  }
+}
+
+.mega-col {
+  width: 25%;
+  float: left;
+  z-index: 999;
+}
+
+#menu-icon {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -12px;
+  margin-right: 30px;
+  display: none;
+
+  span {
+    border: 2px solid #fff;
+    width: 30px;
+    margin-bottom: 5px;
+    display: block;
+    -webkit-transition: all .2s;
+    transition: all .1s;
+  }
+}
+
+@media only screen and (max-width: 1170px) {
+  nav > ul > li > a {
+    padding: 35px 15px;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  nav {
+    display: block !important;
+  }
+}
+
+@media only screen and (max-width: 959px) {
+  nav {
+    display: none;
+    width: 100%;
+    clear: both;
+    float: none;
+    max-height: 400px;
+    overflow-y: scroll;
+  }
+
+  #menu-icon {
+    display: inline;
+    top: 45px;
+    cursor: pointer;
+
+    &.active {
+      .first {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        margin-top: 10px;
+      }
+
+      .second {
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+        position: relative;
+        top: -9px;
+      }
+
+      .third {
+        display: none;
+      }
+    }
+  }
+
+  .search {
+    float: none;
+
+    input {
+      width: 100%;
+    }
+  }
+
+  nav {
+    padding: 10px;
+
+    ul, li {
+      float: none;
+    }
+
+    ul li a {
+      float: none;
+      padding: 8px;
+      display: block;
+    }
+  }
+
+  #header nav {
+    ul ul {
+      display: block;
+      position: static;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+
+    a {
+      color: #fff;
+      padding: 8px;
+
+      &:hover {
+        background: #fff;
+        color: #333;
+        border-radius: 3px;
+      }
+    }
+
+    ul li li a:before {
+      content: "- ";
+    }
+  }
+
+  .mega-col {
+    width: 100%;
+  }
+}

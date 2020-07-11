@@ -1,0 +1,32 @@
+$topSize: 40px;
+$rightSize: 650px; 
+$color: #ef3636;
+.type-input {
+  margin-top: $topSize;
+  margin-left: 20px;
+}
+.type-resgist {
+    margin-top: $topSize;
+}
+.button-summit {
+   margin-top: $topSize;
+   border: 2px solid;
+   border-radius: 3px;
+   background: none;
+   background-color: $color;
+   border-color:  $color;
+   color: #fff;
+   cursor: pointer;
+   text-decoration: none;
+   font-weight: 700;
+   text-shadow: none;
+   display: inline-block;
+   -webkit-appearance: none;
+   padding: 10px 20px;
+}
+.img-submit {
+    margin-top: 400px;
+}
+img {
+  cursor: pointer;
+}
