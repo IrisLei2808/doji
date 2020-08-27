@@ -91,14 +91,7 @@ const INITIAL_STATE = {
             imgUrl: 'https://demo2wpopal.b-cdn.net/ekommart/wp-content/uploads/2020/02/ph10-14-1024x1024.jpg',
             price: 111,
             linkUrl: 'Apple'
-        },
-        {
-            id: 13,
-            title : 'Ciabatta',
-            imgUrl: 'https://demo2wpopal.b-cdn.net/ekommart/wp-content/uploads/2020/02/ph16-11-450x450.jpg',
-            price: 220,
-            linkUrl: 'Ciabatta'
-        },
+        }
     ],
     jewelry: [  
         {
@@ -323,9 +316,9 @@ const INITIAL_STATE = {
 
 
 
-const itemReducer = (state = INITIAL_STATE , action) => {
+const itemReducer = (state = INITIAL_STATE , action) => { 
     if(action.type === ADD_TO_CART) {
-         let addItem = state.itemProduct.find(item => item.id === action.id) // check if id exits in data
+         let addItem = state.itemProduct.find(item => item.id === action.id) 
          let exit_item = state.addItems.find(item => item.id === action.id)
          if(exit_item) {
              addItem.quantity += 1
@@ -346,7 +339,7 @@ const itemReducer = (state = INITIAL_STATE , action) => {
     }
 
     if(action.type === ADD_TO_CART_JEWELRY) {
-        let addItem = state.jewelry.find(item => item.id === action.id) // check if id exits in data
+        let addItem = state.jewelry.find(item => item.id === action.id) 
         let exit_item = state.addItems.find(item => item.id === action.id)
         if(exit_item) {
             addItem.quantity += 1
@@ -365,8 +358,8 @@ const itemReducer = (state = INITIAL_STATE , action) => {
             }
         }
    }
-   if(action.type === ADD_TO_CART_SHOE) {
-    let addItem = state.shoe.find(item => item.id === action.id) // check if id exits in data
+    if(action.type === ADD_TO_CART_SHOE) {
+    let addItem = state.shoe.find(item => item.id === action.id) 
     let exit_item = state.addItems.find(item => item.id === action.id)
     if(exit_item) {
         addItem.quantity += 1
@@ -385,8 +378,8 @@ const itemReducer = (state = INITIAL_STATE , action) => {
         }
     }
 }
-if(action.type === ADD_TO_CART_SHIRT) {
-    let addItem = state.clothing.find(item => item.id === action.id) // check if id exits in data
+    if(action.type === ADD_TO_CART_SHIRT) {
+    let addItem = state.clothing.find(item => item.id === action.id) 
     let exit_item = state.addItems.find(item => item.id === action.id)
     if(exit_item) {
         addItem.quantity += 1
@@ -479,16 +472,6 @@ if(action.type === ADD_TO_CART_SHIRT) {
              ? {...product, quantity: product.quantity + 1} : product)
         }
      }
-    /*
-    if(action.type=== ADD_QUANTITY){
-        let addItem = state.itemProduct.find(item=> action.id === item.id)
-        addItem.quantity += 1 
-          let newTotal = state.total + addItem.price
-          return{
-              ...state,
-              total: newTotal
-          }
-    } */
     
     if(action.type === SUB_QUANTITY) {
         let addItem = state.addItems.find(item => item.id === action.id)

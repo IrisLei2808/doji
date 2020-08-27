@@ -1,7 +1,5 @@
 import React from 'react';
 import './stylish.scss';
-import {selectDirectorySections} from '../../redux/directory/directory.selector';
-import {createStructuredSelector} from 'reselect';
 import {connect} from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -25,11 +23,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Stylish = ({sections}) => {
-  const { imageUrl } = sections[5]  
+const Stylish = ({stylishImage}) => {
   const classes = useStyles();
   return (
-        <div className='img-slide-style' style={{backgroundImage: `url(${(`${imageUrl}`)})`}}>
+        <div className='img-slide-style' style={{backgroundImage: `url(${(`${stylishImage.imageUrl}`)})`}}>
           <h3 className='title-brand-style'>TREND & FASHION GUIDE</h3>
           <h1 className='title-item-style'>THE MOST STYLISH</h1>
           <Link to='/shop'><Button size="large" className={classes.margin01}>Shop Now</Button></Link>
@@ -38,8 +35,8 @@ const Stylish = ({sections}) => {
 }
 
 
-const mapStateToProps = createStructuredSelector({
-    sections: selectDirectorySections
+const mapStateToProps = state => ({
+  stylishImage: state.arrivalReducer.arrival?.filter(_ => _.title === "stylish")?.[0] || {},
 })
 
 export default connect(mapStateToProps)(Stylish) 

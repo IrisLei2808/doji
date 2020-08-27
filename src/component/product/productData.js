@@ -1,11 +1,11 @@
 export const tileData = [ // data - homepage
     {
-        title: 'White  Suit',  
+        title: 'White Suit',  
         imgUrl : 'https://demo2wpopal.b-cdn.net/ekommart/wp-content/uploads/2020/02/ph16-11-450x450.jpg',
         price: 250
     },
     {
-        title: 'Wide  Pants',
+        title: 'Wide Pants',
         imgUrl: 'https://demo2wpopal.b-cdn.net/ekommart/wp-content/uploads/2020/02/ph16-10-450x450.jpg',
         price: 168
     },

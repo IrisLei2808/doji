@@ -21,11 +21,10 @@ const styles = (theme) => ({
 
  class Shirt extends React.Component {
 
-
-
    handleClick = (id) => {
     this.props.addToCartShirt(id);
   }
+  
   render() {
     const {classes} = this.props;
    

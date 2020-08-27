@@ -10,6 +10,7 @@ import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import {addToCart} from '../../redux/item/action/cartAction';
 
+
 const styles = (theme) => ({
   root: {
     flexGrow: 1,
@@ -55,6 +56,7 @@ const styles = (theme) => ({
         ))}
       </Grid>
    </div>
+
    <MainFooter />
    </div>
  );

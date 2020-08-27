@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import './product.scss';
-import {tileData} from './productData';
 import TitleProduct from '../title-product/title-product';
+import {connect} from 'react-redux';
+import {GET_DATA_FROM_API} from '../../redux/item/action/action-type/action-type';
+
+const _ = require('lodash');
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,14 +24,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Product() {
+const Product = ({dispatch, productItem, dataItem}) => {
   const classes = useStyles();
+  useEffect(() => {
+     dispatch({type: GET_DATA_FROM_API})
+  }, [])
+  var dataProduct = _.filter(productItem, o => o.id > 17 && o.id < 22) || {};
 
   return (
     <div>  
     <TitleProduct />
     <div className={classes.root}>
-           { tileData.map((tile) => (
+           { dataProduct.map((tile) => (
       <Grid container spacing={3}>
                  <Grid item xs={12} sm={3}>
                  <img className='img-product' src={tile.imgUrl} alt='' />
@@ -43,3 +50,12 @@ export default function Product() {
     </div>
   );
 }
+
+const mapStateToProps = state => ({
+     productItem: state.apiReducer.news
+   
+})
+   
+
+
+export default connect(mapStateToProps)(Product)

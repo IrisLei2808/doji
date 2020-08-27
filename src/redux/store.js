@@ -11,7 +11,7 @@ const sagaMiddleware = createSagaMiddleware();
 const persistConfig = {
   key: 'root',
   storage: storage,
-  stateReconciler: autoMergeLevel2 // Xem thêm tại mục "Quá trình merge".
+  stateReconciler: autoMergeLevel2 
  };
 
  const pReducer = persistReducer(persistConfig, rootReducer);

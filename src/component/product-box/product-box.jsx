@@ -1,8 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import {createStructuredSelector} from 'reselect';
-import {selectDirectorySections} from '../../redux/directory/directory.selector';
 import {connect} from 'react-redux';
 import './product-box.scss';
 
@@ -39,52 +37,32 @@ const useStyles = makeStyles((theme) => ({
 },
 }));
 
-function findProduct(idx) {
-   return idx.id > 1 && idx.id < 6
-}
-
-const ProductBox = ({sections})  => {
+const ProductBox = ({bagImage,dressImage,shoeImage,clockImage})  => {
   const classes = useStyles();
-  const product = sections.filter(findProduct)
-  const {imageUrl} = product[0] 
-  const imageUrlClock = product[1].imageUrl 
-  const imageUrlShoe = product[2].imageUrl
-  const imageUrlDress = product[3].imageUrl
-  console.log(imageUrlShoe);
-  
+
   return (
-   /*  <div className={classes.root}>
-      <GridList cellHeight={160} className={classes.gridList} cols={2}>
-        {sections.map(({imageUrl}) => (
-           <GridListTile key={imageUrl}>
-               <img src={imageUrl} />
-           </GridListTile>
-        
-        ))}
-      </GridList>
-    </div> */
     <div className={classes.root}>
        <Grid container spacing={3} alignItems="center" justify="center" spacing={0}>
         <Grid item sm={4} >
           <div className={classes.paper1}>
-              <img src={imageUrl} id='img-zoom1' alt='' />
+              <img src={bagImage.imageUrl} id='img-zoom1' alt='' />
          </div> 
         </Grid>
         <Grid item sm={4} >
            <Grid item sm={2}>         
            <div className={classes.paper2}>
-               <img src={imageUrlClock} alt='' /> 
+               <img src={dressImage.imageUrl} alt='' /> 
           </div>
              </Grid>
            <Grid item sm={2}>      
            <div className={classes.paper2}>
-              <img src={imageUrlShoe} id='img-zoom1' alt='' />
+              <img src={shoeImage.imageUrl} id='img-zoom1' alt='' />
           </div>   
             </Grid>
         </Grid>
         <Grid item sm={4} >
         <div className={classes.paper1}>
-        <img src={imageUrlDress} id='img-zoom1' alt='' />
+        <img src={clockImage.imageUrl} id='img-zoom1' alt='' />
           </div>
         </Grid>
       </Grid>
@@ -95,8 +73,11 @@ const ProductBox = ({sections})  => {
   );
 }
 
-const mapStateToProps = createStructuredSelector({
-    sections: selectDirectorySections
+const mapStateToProps = state => ({
+  bagImage: state.arrivalReducer.arrival?.filter(_ => _.title === "dress")?.[0] || {},
+  dressImage: state.arrivalReducer.arrival?.filter(_ => _.title === "clock")?.[0] || {},
+  shoeImage: state.arrivalReducer.arrival?.filter(_ => _.title === "shoe")?.[0] || {},
+  clockImage: state.arrivalReducer.arrival?.filter(_ => _.title === "towel")?.[0] || {},
 })
 
 export default connect(mapStateToProps)(ProductBox)

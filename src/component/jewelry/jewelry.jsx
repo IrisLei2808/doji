@@ -24,6 +24,9 @@ const styles = (theme) => ({
 
   constructor(props) {
     super(props);
+    this.state = {
+      isLoggin: false
+    }
 }
 
    handleClick = (id) => {

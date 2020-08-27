@@ -1,7 +1,5 @@
 import React from 'react';
 import './slide.scss';
-import {selectDirectorySections} from '../../redux/directory/directory.selector';
-import {createStructuredSelector} from 'reselect';
 import {connect} from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -25,23 +23,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Slide = ({sections}) => {
-  const { imageUrl , title , season , year } = sections[0]  
+const Slide = ({slideImage}) => {
+  
   const classes = useStyles();
   return (
-        <div className='img-slide' style={{backgroundImage: `url(${(`${imageUrl}`)})`}}>
-            <h1 className='title-item'>{title}</h1>
+        <div className='img-slide' style={{backgroundImage: `url(${(`${slideImage.imageUrl}`)})`}}>
+            <h1 className='title-item'>{slideImage.title}</h1>
             <hr className='vertical-line' />
-            <h1 className='title-season'>{season}</h1>
-            <h1 className='title-year'>{year}</h1>
+            <h1 className='title-season'>{slideImage.season}</h1>
+            <h1 className='title-year'>{slideImage.year}</h1>
           <Link to='/shop'><Button size="large" className={classes.margin}>Shop Now</Button></Link>  
         </div>
   )
 }
 
-
-const mapStateToProps = createStructuredSelector({
-    sections: selectDirectorySections
+const mapStateToProps = state => ({
+  slideImage: state.arrivalReducer.arrival?.filter(_ => _.title === "BAG")?.[0] || {},
 })
 
 export default connect(mapStateToProps)(Slide) 

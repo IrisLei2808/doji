@@ -1,16 +1,17 @@
 import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import {ItemData} from '../product/productData2';
 import {connect} from 'react-redux';
 import './main-footer.scss';
 import {GET_DATA_FROM_API} from '../../redux/item/action/action-type/action-type';
+
+const _ = require('lodash');
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     marginTop: 80,
-    backgroundColor : "#050505",
+    backgroundColor : "black",
     height: 520
   },
   paper: {
@@ -20,19 +21,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const paymentUrl = ItemData.find((item) => item.title === 'Payment')
+ const MainFooter = ({paymentItem, dispatch}) => {
 
- function MainFooter({article, dispatch,state}) {
-   useEffect(() => {
+    useEffect(() => {
      dispatch({type: GET_DATA_FROM_API})  
-   }, [])
+   }, []) 
+   //let list = _.map(user, item => item.title === "Payment").filter(item => item.title);
   const classes = useStyles();
-  console.log('article', article);
-  console.log('state', state);
-    
   return (
     <div className={classes.root}>
-      <Grid container spacing={3}>
+        <Grid container spacing={3}>
         <Grid item xs={3}>
         <div className='column-footer'>
         <h3>Contact Us</h3> <br/>
@@ -67,16 +65,15 @@ const paymentUrl = ItemData.find((item) => item.title === 'Payment')
       </Grid>
       <div className='element-row'>
          <h3 className='copy-right'>Copyright © 2020 ekommart. All Rights Reserved.</h3>
-         <img className='img-payment' src={paymentUrl.imgUrl} alt='Payment' />
+         <img className='img-payment' src={paymentItem.imgUrl} alt='Payment' />
       </div>
     </div>
   );
-}
-
-
-const mapStateToProps = (state) => ({   
-    article : state.apiReducer.news, 
-    state
+} 
+const mapStateToProps = (state) => ({    
+    //paymentItem : state.apiReducer.news?.filter(_ => _.title === "Payment").length ? state.apiReducer.news.filter(_ => _.title === "Payment")[0] : [] ,
+    paymentItem: state.apiReducer.news?.filter(_ => _.title == "Payment")?.[0] || {} ,
+    //user: state.apiReducer.news
 })
 
-export default connect(mapStateToProps)(MainFooter) 
+export default connect(mapStateToProps,null)(MainFooter) 

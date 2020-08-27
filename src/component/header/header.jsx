@@ -85,6 +85,7 @@ export default function PersistentDrawerLeft() {
         })}
       >
         <Toolbar className='toolbar'>
+           
           <img src={logo} alt='icon' className='image-logo' />
           <Link to='/'><i className="fas fa-home"></i></Link>     
           <Link to='login'><i className="far fa-user"></i></Link>      
@@ -93,7 +94,7 @@ export default function PersistentDrawerLeft() {
           </Toolbar>
       </AppBar>
       
-   
+    
   
     </div>
   );

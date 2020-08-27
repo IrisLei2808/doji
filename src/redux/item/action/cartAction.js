@@ -5,7 +5,7 @@ import {ADD_TO_CART,ADD_QUANTITY,ADD_TO_CART_JEWELRY,SUB_QUANTITY,REMOVE_ITEM,
 
 } from '../action/action-type/action-type'
 
-export const addToCart = (id) => {
+export const addToCart = (id) => {  // action creator 
     return {
         type: ADD_TO_CART,
         id
@@ -116,3 +116,4 @@ export const addQuantityShirt = (id) => {
         id
     }
 }
+

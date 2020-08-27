@@ -38,7 +38,6 @@ const styles = (theme) => ({
 });
 
  
- // cái này có phải là gio hang k ong , cai san pham hien thi ra co tang giam do, cái này ông render bị sai nè, đáng lẽ phải lấy ra từ addItems chứ
  class Detail extends React.Component {
 
   constructor(props) {

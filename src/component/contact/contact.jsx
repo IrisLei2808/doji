@@ -5,7 +5,7 @@ import MenuNav from '../menu-nav/menu-nav';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import MainFooter from '../main-footer/main-footer';
-import {ItemData} from '../product/productData2';
+
 import './contact.scss';
 
 const useStyles = makeStyles((theme) => ({

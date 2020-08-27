@@ -1,11 +1,12 @@
-import React , {useState} from 'react';
+import React , {useState, useEffect} from 'react';
 import BlackBar from '../black-bar/black-bar';
 import Header from '../header/header';
 import MenuNav from '../menu-nav/menu-nav';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import {ItemData} from '../product/productData2';
 import MainFooter from '../main-footer/main-footer';
+import {connect} from 'react-redux';
+import {GET_DATA_FROM_API} from '../../redux/item/action/action-type/action-type';
 import './blog.scss';
 
 const useStyles = makeStyles((theme) => ({
@@ -20,48 +21,15 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-const item01 = ItemData.find((index) => {    
-      return index.id === 1;
-  })
-const item02 = ItemData.find((index) => {
-    return index.id === 2;
-})
-const item03 = ItemData.find((index) => {
-    return index.id === 3;
-})
-const item04 = ItemData.find((index) => {
-    return index.id === 4;
-})
-const item05 = ItemData.find((index) => {
-    return index.id === 5;
-})
-const item06 = ItemData.find((index) => {
-    return index.id === 6;
-}) 
-const item07 = ItemData.find((index) => {
-    return index.id === 7;
-})
-const item08 = ItemData.find((index) => {
-    return index.id === 8;
-})
-const item09 = ItemData.find((index) => {
-    return index.id === 9;
-})
-const item10 = ItemData.find((index) => {
-    return index.id === 10;
-})
-const post01 = ItemData.find((index) => {
-    return index.id === 11
-})
-const post02 = ItemData.find((index) => {
-    return index.id === 12
-})
-const post03 = ItemData.find((index) => {
-    return index.id === 13
-})
-export default function Blog() {
+const Blog = ({dispatch, firstItem, secondItem, thirdItem, fourthItem, 
+    fifthItem, sixthItem, sevenItem, eightItem, nineItem, tentItem,
+     firstPost, secondPost, thirdPost
+}) => {
     const classes = useStyles();
     var detail = useState('Read More')
+    useEffect(() => {
+        dispatch({type: GET_DATA_FROM_API})
+    }, [])
     return (
         <div className={classes.root}>
             <BlackBar />
@@ -69,55 +37,55 @@ export default function Blog() {
             <MenuNav />
             <Grid container spacing={0}>
                  <Grid item xs={9}>
-                    <img src={item01.imgUrl} alt='' />
-                    <p className='date-blog'>{item01.date}</p>
-                    <h1 className='title-blog'>{item01.title}</h1>
-                    <p className='content-blog'>{item01.content}</p>
+                    <img src={firstItem.imgUrl} alt='' />
+                    <p className='date-blog'>{firstItem.date}</p>
+                    <h1 className='title-blog'>{firstItem.title}</h1>
+                    <p className='content-blog'>{firstItem.content}</p>
                     <p className='content-detail'>{detail}</p>
-                    <img src={item02.imgUrl} alt=''  />
-                    <p className='date-blog'>{item01.date}</p>
-                    <h1 className='title-blog'>{item01.title}</h1>
-                    <p className='content-blog'>{item01.content}</p>
+                    <img src={secondItem.imgUrl} alt=''  />
+                    <p className='date-blog'>{firstItem.date}</p>
+                    <h1 className='title-blog'>{firstItem.title}</h1>
+                    <p className='content-blog'>{firstItem.content}</p>
                     <p className='content-detail'>{detail}</p>
-                    <img src={item03.imgUrl} alt=''  />
-                    <p className='date-blog'>{item01.date}</p>
-                    <h1 className='title-blog'>{item01.title}</h1>
-                    <p className='content-blog'>{item01.content}</p>
+                    <img src={thirdItem.imgUrl} alt=''  />
+                    <p className='date-blog'>{firstItem.date}</p>
+                    <h1 className='title-blog'>{firstItem.title}</h1>
+                    <p className='content-blog'>{firstItem.content}</p>
                     <p className='content-detail'>{detail}</p>
-                    <img src={item04.imgUrl} alt=''  />
-                    <p className='date-blog'>{item01.date}</p>
-                    <h1 className='title-blog'>{item01.title}</h1>
-                    <p className='content-blog'>{item01.content}</p>
+                    <img src={fourthItem.imgUrl} alt=''  />
+                    <p className='date-blog'>{firstItem.date}</p>
+                    <h1 className='title-blog'>{firstItem.title}</h1>
+                    <p className='content-blog'>{firstItem.content}</p>
                     <p className='content-detail'>{detail}</p>
-                    <img src={item05.imgUrl} alt=''  />
-                    <p className='date-blog'>{item01.date}</p>
-                    <h1 className='title-blog'>{item01.title}</h1>
-                    <p className='content-blog'>{item01.content}</p>
+                    <img src={fifthItem.imgUrl} alt=''  />
+                    <p className='date-blog'>{firstItem.date}</p>
+                    <h1 className='title-blog'>{firstItem.title}</h1>
+                    <p className='content-blog'>{firstItem.content}</p>
                     <p className='content-detail'>{detail}</p>
-                    <img src={item06.imgUrl} alt=''  />
-                    <p className='date-blog'>{item01.date}</p>
-                    <h1 className='title-blog'>{item01.title}</h1>
-                    <p className='content-blog'>{item01.content}</p>
+                    <img src={sixthItem.imgUrl} alt=''  />
+                    <p className='date-blog'>{firstItem.date}</p>
+                    <h1 className='title-blog'>{firstItem.title}</h1>
+                    <p className='content-blog'>{firstItem.content}</p>
                     <p className='content-detail'>{detail}</p>
-                    <img src={item07.imgUrl} alt=''  />
-                    <p className='date-blog'>{item01.date}</p>
-                    <h1 className='title-blog'>{item01.title}</h1>
-                    <p className='content-blog'>{item01.content}</p>
+                    <img src={sevenItem.imgUrl} alt=''  />
+                    <p className='date-blog'>{firstItem.date}</p>
+                    <h1 className='title-blog'>{firstItem.title}</h1>
+                    <p className='content-blog'>{firstItem.content}</p>
                     <p className='content-detail'>{detail}</p>
-                    <img src={item08.imgUrl} alt=''  />
-                    <p className='date-blog'>{item01.date}</p>
-                    <h1 className='title-blog'>{item01.title}</h1>
-                    <p className='content-blog'>{item01.content}</p>
+                    <img src={eightItem.imgUrl} alt=''  />
+                    <p className='date-blog'>{firstItem.date}</p>
+                    <h1 className='title-blog'>{firstItem.title}</h1>
+                    <p className='content-blog'>{firstItem.content}</p>
                     <p className='content-detail'>{detail}</p>
-                    <img src={item09.imgUrl} alt=''  />
-                    <p className='date-blog'>{item01.date}</p>
-                    <h1 className='title-blog'>{item01.title}</h1>
-                    <p className='content-blog'>{item01.content}</p>
+                    <img src={nineItem.imgUrl} alt=''  />
+                    <p className='date-blog'>{firstItem.date}</p>
+                    <h1 className='title-blog'>{firstItem.title}</h1>
+                    <p className='content-blog'>{firstItem.content}</p>
                     <p className='content-detail'>{detail}</p>
-                    <img src={item10.imgUrl} alt=''  />
-                    <p className='date-blog'>{item01.date}</p>
-                    <h1 className='title-blog'>{item01.title}</h1>
-                    <p className='content-blog'>{item01.content}</p>
+                    <img src={tentItem.imgUrl} alt=''  />
+                    <p className='date-blog'>{firstItem.date}</p>
+                    <h1 className='title-blog'>{firstItem.title}</h1>
+                    <p className='content-blog'>{firstItem.content}</p>
                     <p className='content-detail'>{detail}</p>
                  </Grid>
                  <Grid item xs={3}>
@@ -126,13 +94,13 @@ export default function Blog() {
                     <ul> 
                         <li>
                             <div className='img-contain'>
-                            <img className='img-post' src={post01.imgUrl} alt='' />
+                            <img className='img-post' src={firstPost.imgUrl} alt='' />
                             </div>
                         </li>
                         <li>
                             <div className='content-contain'>
-                             <p className='content-post'>{post01.title}</p> 
-                             <p className='date-post'>{post01.date}</p>
+                             <p className='content-post'>{firstPost.title}</p> 
+                             <p className='date-post'>{firstPost.date}</p>
                             </div>
                         </li>
                     </ul>
@@ -140,13 +108,13 @@ export default function Blog() {
                     <ul> 
                         <li>
                             <div className='img-contain'>
-                            <img className='img-post' src={post02.imgUrl} alt='' />
+                            <img className='img-post' src={secondPost.imgUrl} alt='' />
                             </div>
                         </li>
                         <li>
                             <div className='content-contain'>
-                             <p className='content-post'>{post01.title}</p> 
-                             <p className='date-post'>{post01.date}</p>
+                             <p className='content-post'>{firstPost.title}</p> 
+                             <p className='date-post'>{firstPost.date}</p>
                             </div>
                         </li>
                     </ul>
@@ -154,13 +122,13 @@ export default function Blog() {
                     <ul> 
                         <li>
                             <div className='img-contain'>
-                            <img className='img-post' src={post03.imgUrl} alt='' />
+                            <img className='img-post' src={thirdPost.imgUrl} alt='' />
                             </div>
                         </li>
                         <li>
                             <div className='content-contain'>
-                             <p className='content-post'>{post01.title}</p> 
-                             <p className='date-post'>{post01.date}</p>
+                             <p className='content-post'>{firstPost.title}</p> 
+                             <p className='date-post'>{firstPost.date}</p>
                             </div>
                         </li>
                     </ul>
@@ -183,3 +151,21 @@ export default function Blog() {
         </div>
     )
 }
+
+const mapStateToProps = state => ({
+     firstItem: state.apiReducer.news?.filter(_ => _.id === 1)?.[0] || {},
+     secondItem: state.apiReducer.news?.filter(_ => _.id === 2)?.[0] || {},
+     thirdItem: state.apiReducer.news?.filter(_ => _.id === 3)?.[0] || {},
+     fourthItem: state.apiReducer.news?.filter(_ => _.id === 4)?.[0] || {},
+     fifthItem: state.apiReducer.news?.filter(_ => _.id === 5)?.[0] || {},
+     sixthItem: state.apiReducer.news?.filter(_ => _.id === 6)?.[0] || {},
+     sevenItem: state.apiReducer.news?.filter(_ => _.id === 7)?.[0] || {},
+     eightItem: state.apiReducer.news?.filter(_ => _.id === 8)?.[0] || {},
+     nineItem: state.apiReducer.news?.filter(_ => _.id === 9)?.[0] || {},
+     tentItem: state.apiReducer.news?.filter(_ => _.id === 10)?.[0] || {},
+     firstPost: state.apiReducer.news?.filter(_ => _.id === 11)?.[0] || {},
+     secondPost: state.apiReducer.news?.filter(_ => _.id === 12)?.[0] || {},
+     thirdPost: state.apiReducer.news?.filter(_ => _.id === 13)?.[0] || {}
+})
+
+export default connect(mapStateToProps)(Blog)
